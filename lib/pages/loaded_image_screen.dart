@@ -1,33 +1,40 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:moscas/pages/loading_screen.dart';
 
-class loadedImageScreen extends StatefulWidget {
+class LoadedImageScreen extends StatefulWidget {
+  const LoadedImageScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    return loadedImageScreenState();
+    return LoadedImageScreenState();
   }
 
 }
 
-class loadedImageScreenState extends State<loadedImageScreen> {
+class LoadedImageScreenState extends State<LoadedImageScreen> {
+  File loadedImage = LoadingScreenState.loadedImage;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('Help me!', 
+              const Text('Help me!', 
                 style: TextStyle(
                   fontSize: 40,
                 )),
+              Image.file(loadedImage),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FilledButton(onPressed: (){}, 
-                    child: Text('Добавить пометку')),
+                    child: const Text('Добавить пометку')),
                   FilledButton(onPressed: (){}, 
-                    child: Text('Завершить')),
+                    child: const Text('Завершить')),
                 ],
               )
             ],
