@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:moscas/pages/loading_screen.dart';
+import 'package:moscas/pages/mark_adding_screen.dart';
 
 class LoadedImageScreen extends StatefulWidget {
   const LoadedImageScreen({super.key});
@@ -23,7 +23,7 @@ class LoadedImageScreenState extends State<LoadedImageScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text('Help me!', 
+              const Text('Выберите метку или завершите установку этажа', 
                 style: TextStyle(
                   fontSize: 40,
                 )),
@@ -32,9 +32,11 @@ class LoadedImageScreenState extends State<LoadedImageScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FilledButton(onPressed: (){}, 
-                    child: const Text('Добавить пометку')),
-                  FilledButton(onPressed: (){}, 
                     child: const Text('Завершить')),
+                  FilledButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MarkAdding()));
+                  }, 
+                    child: const Text('Добавить пометку')),
                 ],
               )
             ],
