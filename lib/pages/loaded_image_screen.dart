@@ -27,7 +27,7 @@ class LoadedImageScreenState extends State<LoadedImageScreen> {
                 style: TextStyle(
                   fontSize: 40,
                 )),
-              Image.file(loadedImage),
+              Image.file(loadedImage, width: 300.0, height: 200.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
