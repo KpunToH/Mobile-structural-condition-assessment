@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:moscas/pages/loading_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: LoadingScreen(),
   ));
 }
